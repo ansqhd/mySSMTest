@@ -1,0 +1,39 @@
+<<<<<<< HEAD
+1,每一个war工程都需要一个 \src\main\webapp\WEB-INF\web.xml 的文件
+  (简单说一下，web.xml的加载过程。当我们启动一个WEB项目容器时，容器包括(JBoss,Tomcat等)。首先会去读取web.xml配置文件里的配置，当这一步骤没有出错并且完成之后，项目才能正常的被启动起来)
+  1，eclips 不会自动创建此文件 需要手动创建
+
+2 运行时需要用run config 选择 maven  在global 里 clean tomcat7:run 来运行
+  1，前提是 配置了maven 插件的情况下
+  2， 在/mb-manager 居合工程的 pom里面配置来获取tomcat7的插件
+     <build>
+        <plugins>
+=======
+ 1,每一个war工程都需要一个 \src\main\webapp\WEB-INF\web.xml 的文件
+   (简单说一下，web.xml的加载过程。当我们启动一个WEB项目容器时，容器包括(JBoss,Tomcat等)。首先会去读取web.xml配置文件里的配置，当这一步骤没有出错并且完成之后，项目才能正常的被启动起来)
+   eclips 不会自动创建此文件 需要手动创建
+    
+ 
+1，eclips 不会自动创建此文件 需要手动创建
+
+2 运行时需要用run config 选择 maven  在global 里 clean tomcat7:run 来运行
+ 1，前提是 配置了maven 插件的情况下
+  2， 在/mb-manager 居合工程的 pom里面配置来获取tomcat7的插件
+     <build>
+         <plugins>
+>>>>>>> dev
+            <!-- 配置Tomcat插件 -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <configuration>
+                    <path>/</path>
+                    <port>8080</port>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+3  Maven中dependency和plugins 区别
+   1,plugins 是工具  （mybatis插件是用来自动生成数据库dao和mapper的工具）
+   2 dependency
